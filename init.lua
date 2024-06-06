@@ -156,6 +156,7 @@ vim.opt.scrolloff = 10
 -- Tab width
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -584,7 +585,13 @@ require('lazy').setup {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
         --
-
+        nim_langserver = {
+          settings = {
+            projectMapping = {
+              projectFile = 'src/main.nim',
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
